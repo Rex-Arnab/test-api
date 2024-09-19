@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './style.css';
 
-function App() {
+export default function App() {
+  const handleData = async () => {
+    const response = await fetch('https://api.learnzo.online/api/v1/ping');
+    const result = await response.json();
+    console.log(result);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Hello StackBlitz!</h1>
+      <p>Start editing to see some magic happen :)</p>
+      <button onClick={handleData}>Fetch Ping</button>
     </div>
   );
 }
-
-export default App;
