@@ -1,6 +1,3 @@
-import React from 'react';
-import './style.css';
-
 export default function App() {
   const handleData = async () => {
     const response = await fetch('https://api.learnzo.online/api/v1/ping');
